@@ -1,262 +1,197 @@
-@import url('https://fonts.googleapis.com/css2?family=Work+Sans:ital,wght@0,100..900;1,100..900&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Work+Sans:ital,wght@0,100..900;1,100..900&display=swap");
 
 * {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
 }
 
+a {
+  text-decoration: none;
+  color: #333333;
+
+  &:hover {
+    color: #d52121;
+  }
+}
 body {
+  display: flex;
+  flex-direction: column;
+  width: 100vw;
+  overflow-x: hidden;
+  color: #333333;
+
+  .site-wrapper {
     display: flex;
     flex-direction: column;
     width: 100vw;
-    overflow-x: hidden;
+    font-family: "Work Sans", sans-serif;
+    // font-optical-sizing: auto;
+    // font-weight: <weight>;
+    // font-style: normal;
 
-    .site-wrapper {
+    .header-top-section {
+      display: flex;
+      width: 100%;
+      padding: 12px 0;
+
+      .header-top-container {
+        width: 1140px;
+        margin: 0 auto;
         display: flex;
-        flex-direction: column;
-        width: 100vw;
-        font-family: "Work Sans", sans-serif;
+        align-items: center;
+        justify-content: space-between;
 
-        .header-top-section {
+        .left-side {
+          display: flex;
+
+          ul {
             display: flex;
-            width: 100%;
+            gap: 30px;
+            text-transform: uppercase;
 
-            .header-top-container{
+            li {
+              list-style: none;
+              font-size: 16px;
+              white-space: nowrap;
+              position: relative;
+              cursor: pointer;
+
+              &:hover {
+                h4 {
+                  color: #d52121;
+                }
+
+                li {
+                  color: #d52121;
+                }
+              }
+
+              .dropdown-container {
                 display: flex;
+                flex-direction: column;
+                position: absolute;
+                background-color: white;
+                width: 100%;
+                padding-top: 12px;
+                left: 0;
+                top: 50px;
+                z-index: 3;
+                opacity: 0;
+                transition: opacity 0.2s ease;
+                pointer-events: none;
+                border: 1px solid rgba(128, 128, 128, 0.3);
+                border-top: 2px solid #d52121;
 
-                .left-side{
-                    display: flex;
+                li {
+                  width: 100%;
+                  color: #000;
+                  list-style: none;
+                  cursor: pointer;
+                  position: relative;
 
-                    ul {
-                        display: flex;
+                  h4 {
+                    transition: color 0.2s ease;
+                    color: #000;
+                  }
 
-                        li {
-                            padding: 15px;
-                            font-size: 13px;
-                            white-space: nowrap;
-                            position: relative;
-                            cursor: pointer;
-    
-                            &:hover {
-    
-                                h4 {
-                                    color: #ffc311;
-                                }
-    
-                                li {
-                                    color: #ffc311;
-                                }
-                            }
-    
-                            .dropdown-container {
-                                display: flex;
-                                flex-direction: column;
-                                position: absolute;
-                                background-color: white;
-                                width: 212px;
-                                padding-top: 10px;
-                                left: 0;
-                                top: 50px;
-                                z-index: 3;
-                                opacity: 0;
-                                transition: opacity 0.2s ease;
-                                pointer-events: none;
-                                border: 1px solid rgba(128, 128, 128, 0.300);
-                                border-top: 2px solid #ffc311;
-    
-                                li {
-                                    width: 100%;
-                                    color: #000;
-                                    list-style: none;
-                                    cursor: pointer;
-                                    position: relative;
-    
-    
-                                    h4 {
-                                        font-weight: 400;
-                                        transition: color 0.2s ease;
-                                        color: #000;
-                                    }
-    
-                                    &:not(:last-child) {
-                                        border-bottom: 1px solid rgba(128, 128, 128, 0.300);
-                                    }
-    
-                                    &:hover {
-    
-                                        h4 {
-                                            color: #ffc311;
-                                        }
-    
-                                    }
-    
-                                    .inner-dropdown {
-                                        width: 180px;
-                                        display: flex;
-                                        flex-direction: column;
-                                        position: absolute;
-                                        right: -180px;
-                                        top: -12px;
-                                        background-color: white;
-                                        padding-top: 10px;
-                                        border: 1px solid rgba(128, 128, 128, 0.300);
-                                        transition: opacity 0.2s ease;
-                                        opacity: 0;
-                                        pointer-events: none;
-                                        border-top: 2px solid #ffc311;
-    
-                                        p {
-                                            padding: 15px;
-                                            width: 100%;
-                                            transition: color 0.2s ease;
-    
-                                            &:not(:last-child) {
-                                                border-bottom: 1px solid rgba(128, 128, 128, 0.300);
-                                            }
-    
-                                            &:hover {
-                                                color: #ffc311;
-                                            }
-                                        }
-                                    }
-    
-                                    &:hover {
-                                        .inner-dropdown {
-                                            pointer-events: all;
-                                            opacity: 1;
-                                        }
-                                    }
-                                }
-                            }
-    
-                            &:hover {
-    
-                                .dropdown-container {
-                                    opacity: 1;
-                                    pointer-events: all;
-                                }
-                            }
-                        }
+                  &:not(:last-child) {
+                    border-bottom: 1px solid rgba(128, 128, 128, 0.3);
+                  }
+
+                  &:hover {
+                    h4 {
+                      color: #d52121;
                     }
+                  }
                 }
+              }
 
-                .right-side {
-                    display: flex;
-
-                    ul {
-                        display: flex;
-
-                        li {
-                            padding: 15px;
-                            font-size: 13px;
-                            white-space: nowrap;
-                            position: relative;
-                            cursor: pointer;
-    
-                            &:hover {
-    
-                                h4 {
-                                    color: #ffc311;
-                                }
-    
-                                li {
-                                    color: #ffc311;
-                                }
-                            }
-    
-                            .dropdown-container {
-                                display: flex;
-                                flex-direction: column;
-                                position: absolute;
-                                background-color: white;
-                                width: 212px;
-                                padding-top: 10px;
-                                left: 0;
-                                top: 50px;
-                                z-index: 3;
-                                opacity: 0;
-                                transition: opacity 0.2s ease;
-                                pointer-events: none;
-                                border: 1px solid rgba(128, 128, 128, 0.300);
-                                border-top: 2px solid #ffc311;
-    
-                                li {
-                                    width: 100%;
-                                    color: #000;
-                                    list-style: none;
-                                    cursor: pointer;
-                                    position: relative;
-    
-    
-                                    h4 {
-                                        font-weight: 400;
-                                        transition: color 0.2s ease;
-                                        color: #000;
-                                    }
-    
-                                    &:not(:last-child) {
-                                        border-bottom: 1px solid rgba(128, 128, 128, 0.300);
-                                    }
-    
-                                    &:hover {
-    
-                                        h4 {
-                                            color: #ffc311;
-                                        }
-    
-                                    }
-    
-                                    .inner-dropdown {
-                                        width: 180px;
-                                        display: flex;
-                                        flex-direction: column;
-                                        position: absolute;
-                                        right: -180px;
-                                        top: -12px;
-                                        background-color: white;
-                                        padding-top: 10px;
-                                        border: 1px solid rgba(128, 128, 128, 0.300);
-                                        transition: opacity 0.2s ease;
-                                        opacity: 0;
-                                        pointer-events: none;
-                                        border-top: 2px solid #ffc311;
-    
-                                        p {
-                                            padding: 15px;
-                                            width: 100%;
-                                            transition: color 0.2s ease;
-    
-                                            &:not(:last-child) {
-                                                border-bottom: 1px solid rgba(128, 128, 128, 0.300);
-                                            }
-    
-                                            &:hover {
-                                                color: #ffc311;
-                                            }
-                                        }
-                                    }
-    
-                                    &:hover {
-                                        .inner-dropdown {
-                                            pointer-events: all;
-                                            opacity: 1;
-                                        }
-                                    }
-                                }
-                            }
-    
-                            &:hover {
-    
-                                .dropdown-container {
-                                    opacity: 1;
-                                    pointer-events: all;
-                                }
-                            }
-                        }
-                    }
+              &:hover {
+                .dropdown-container {
+                  opacity: 1;
+                  pointer-events: all;
                 }
+              }
             }
+          }
         }
+
+        .right-side {
+          display: flex;
+
+          ul {
+            display: flex;
+            gap: 30px;
+            text-transform: uppercase;
+
+            li {
+              list-style: none;
+              font-size: 16px;
+              white-space: nowrap;
+              position: relative;
+              cursor: pointer;
+
+              &:hover {
+                h4 {
+                  color: #d52121;
+                }
+
+                li {
+                  color: #d52121;
+                }
+              }
+
+              .dropdown-container {
+                display: flex;
+                flex-direction: column;
+                position: absolute;
+                background-color: white;
+                width: 100%;
+                padding-top: 12px;
+                left: 0;
+                top: 50px;
+                z-index: 3;
+                opacity: 0;
+                transition: opacity 0.2s ease;
+                pointer-events: none;
+                border: 1px solid rgba(128, 128, 128, 0.3);
+                border-top: 2px solid #d52121;
+
+                li {
+                  width: 100%;
+                  color: #000;
+                  list-style: none;
+                  cursor: pointer;
+                  position: relative;
+
+                  h4 {
+                    transition: color 0.2s ease;
+                    color: #000;
+                  }
+
+                  &:not(:last-child) {
+                    border-bottom: 1px solid rgba(128, 128, 128, 0.3);
+                  }
+
+                  &:hover {
+                    h4 {
+                      color: #d52121;
+                    }
+                  }
+                }
+              }
+
+              &:hover {
+                .dropdown-container {
+                  opacity: 1;
+                  pointer-events: all;
+                }
+              }
+            }
+          }
+        }
+      }
     }
+  }
 }
