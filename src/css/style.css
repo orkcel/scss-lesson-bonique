@@ -213,7 +213,7 @@ body .site-wrapper .home-background .home-section .home-section-content {
 body .site-wrapper .home-background .home-section .home-section-content .header-home-section {
   display: flex;
   max-width: 1440px;
-  padding: 37px 0 8px;
+  padding: 37px 0 32px;
   width: 100%;
   justify-content: space-between;
 }
@@ -307,21 +307,20 @@ body .site-wrapper .home-background .home-section .home-section-content nav > ul
   flex-direction: column;
   position: absolute;
   background-color: white;
-  padding-top: 5px;
   left: 0;
-  top: 39px;
+  top: 20px;
   z-index: 3;
   opacity: 0;
   transition: opacity 0.2s ease;
   pointer-events: none;
-  border: 1px solid rgba(128, 128, 128, 0.3);
+  padding: 25px 50px 25px 25px;
 }
 body .site-wrapper .home-background .home-section .home-section-content nav > ul li .dropdown-container.wide-dropdown {
   width: 1000px !important;
   left: -205px;
   flex-direction: row;
   align-items: start;
-  padding: 25px 25px 25px 25px;
+  padding: 25px;
 }
 body .site-wrapper .home-background .home-section .home-section-content nav > ul li .dropdown-container.wide-dropdown li {
   display: flex;
@@ -368,9 +367,6 @@ body .site-wrapper .home-background .home-section .home-section-content nav > ul
 }
 body .site-wrapper .home-background .home-section .home-section-content nav > ul li .dropdown-container li h3:hover {
   color: #d52121;
-}
-body .site-wrapper .home-background .home-section .home-section-content nav > ul li .dropdown-container li:not(:last-child) {
-  border-bottom: 1px solid rgba(128, 128, 128, 0.3);
 }
 body .site-wrapper .home-background .home-section .home-section-content nav > ul li .dropdown-container li:hover h4 {
   color: #d52121;
@@ -507,7 +503,7 @@ body .site-wrapper .product-section .big-container .big-container-wrapper .big-c
   width: 50px;
   height: 50px;
   border-radius: 50%;
-  background-color: #e0dfdc;
+  background-color: #f8f8f8;
   transition: background 0.3s ease, color 0.3s ease;
   cursor: pointer;
   color: black;
@@ -766,7 +762,7 @@ body .site-wrapper .product-section .card-wrapper .big-container-left-column .le
   width: 50px;
   height: 50px;
   border-radius: 50%;
-  background-color: #e0dfdc;
+  background-color: #f8f8f8;
   transition: background 0.3s ease, color 0.3s ease;
   cursor: pointer;
   color: black;
@@ -939,6 +935,20 @@ body .site-wrapper .product-section .two-blocks-container .two-blocks-content .b
 }
 body .site-wrapper .product-section .two-blocks-container .two-blocks-content .block-wrapper .banner-text p {
   font-size: 19px;
+}
+body .site-wrapper .product-section .arrivals-title {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+body .site-wrapper .product-section .arrivals-title h2 {
+  font-size: 30px;
+  font-weight: 400;
+  letter-spacing: 2px;
+}
+body .site-wrapper .product-section .arrivals-title p {
+  margin-top: 15px;
 }
 body .site-wrapper .product-section .client-container {
   background-color: #f8f8f8;
@@ -1140,8 +1150,6 @@ body .site-wrapper footer .footer-top .footer-top-container {
   width: 100%;
   background: #f8f8f8;
   display: flex;
-  align-items: center;
-  justify-content: center;
   padding: 100px;
 }
 body .site-wrapper footer .footer-top .footer-top-container ul {
